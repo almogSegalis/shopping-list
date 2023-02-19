@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from shopping_list import views as shopping_list_views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
+from . import views
+
 
 urlpatterns = [
     path('shopping_list/', include('shopping_list.urls')),
     path("admin/", admin.site.urls),
     path("", shopping_list_views.main_shopping_list, name="home"),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
