@@ -1,0 +1,10 @@
+{% extends 'shopping_list/base.html' %}
+
+{% block content %}
+        <h1>Shopping List</h1>
+        <form class="add-item" action="{% url 'shopping_list:add' %}" method="post">
+        	{% csrf_token %}
+        	{{ add }}
+        	<input type="submit" value="Add">
+        </form>
+{% endblock %}
