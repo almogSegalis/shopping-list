@@ -1,17 +1,13 @@
-{% extends 'shopping_list/base.html' %}
 
-{% block content %}
-        <h1>Shopping List</h1>
-        <form class="add-item" action="{% url 'shopping_list:add' %}" method="post">
-        	{{ add }}
-        	{% csrf_token %}
-        	<input type="submit" value="add">
-        </form>
-        <div class="items">
-		{% for item in items %}
-			<div class = "item">
-				<h2><a href="#">{{ item.item }}</h2>
-			</div>
-		{% endfor %}
+<h1>Shopping List</h1>
+<form class="add-item" action="{% url 'shopping_list:list' %}" method="post">
+	{{ add }}
+	<input type="submit" value="add">
+</form>
+<div class="items">
+	{% for item in items %}
+		<div class = "item">
+			<h2><a href="#">{{ item.item }}</h2>
 		</div>
-{% endblock %}
+	{% endfor %}
+</div>

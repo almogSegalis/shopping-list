@@ -1,9 +1,6 @@
 {% extends 'shopping_list/base.html' %}
 
 {% block content %}
-        <ul>
-        	<li><a href="{% url 'shopping_list:add' %}" class="highlight">Add Item</a></li>
-        </ul>
         <div class="items">
         {% csrf_token %}
 		{% for item in items %}

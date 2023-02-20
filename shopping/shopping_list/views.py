@@ -17,7 +17,7 @@ def add_item(request):
 		add = forms.AddItem(request.POST)
 		#save item to db
 		add.save()
-		return redirect('shopping_list:list')
+		return redirect(request.GET.get('next'))
 	else:
 		add = forms.AddItem()
-	return render(request, 'shopping_list/add_item.html', { 'add': add })
+	return render(request, 'shopping_list/list.html', { 'add': add })
