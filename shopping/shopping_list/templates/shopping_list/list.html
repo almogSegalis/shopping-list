@@ -10,6 +10,7 @@
 			<ul class="list-group">
 			  <li class="list-group-item">
 			    {{ item }}
+			    <a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">Delete item</a>
 			  </li>
 			 </ul>
 		{% endfor %}
