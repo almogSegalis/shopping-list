@@ -2,7 +2,11 @@ from django.shortcuts import render, redirect
 from .models import Item
 from . import forms
 
-# Create your views here.
+# Delete an item
+def delete_item(request, item_id):
+	item = Item.objects.get(pk=item_id)
+	item.delete()
+	return redirect('shopping_list:list')
 
 def main_shopping_list(request):
 	items = Item.objects.all().order_by('date')
