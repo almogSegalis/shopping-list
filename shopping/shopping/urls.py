@@ -25,7 +25,6 @@ urlpatterns = [
     path('shopping_list/', include('shopping_list.urls')),
     path("admin/", admin.site.urls),
     path('', include('shopping_list.urls')),
-    # path("", shopping_list_views.main_shopping_list, name="home"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
