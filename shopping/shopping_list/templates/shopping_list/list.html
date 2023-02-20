@@ -1,16 +1,17 @@
 {% extends 'shopping_list/base.html' %}
 
 {% block content %}
-        <h1>Shopping List</h1>
         <ul>
         	<li><a href="{% url 'shopping_list:add' %}" class="highlight">Add Item</a></li>
         </ul>
         <div class="items">
         {% csrf_token %}
 		{% for item in items %}
-			<div class = "item">
-				<h2><a href="#">{{ item.item }}</h2>
-			</div>
+			<ul class="list-group">
+			  <li class="list-group-item">
+			    {{ item }}
+			  </li>
+			 </ul>
 		{% endfor %}
 		</div>
 {% endblock %}
