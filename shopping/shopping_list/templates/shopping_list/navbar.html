@@ -11,9 +11,12 @@
     <form class="add-item" action="{% url 'shopping_list:add_item' %}" method="post">
       {{ add }}
       {% csrf_token %}
-      <input class="form-control me-2" type="add" placeholder="Item name" aria-label="Add item">
+      <!-- <input class="form-control me-2" type="add" placeholder="Item name" name="item" id="id_item" aria-label="Add item"> -->
       <button class="btn btn-outline-success" type="submit">Add</button>
     </form>
     </div>
   </div>
 </nav>
+
+
+
