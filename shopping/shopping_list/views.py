@@ -10,14 +10,16 @@ def delete_item(request, item_id):
 
 def main_shopping_list(request):
 	items = Item.objects.all().order_by('date')
-	return render(request, 'shopping_list/list.html', { 'items': items })
+	add = forms.AddItem()
+	return render(request, 'shopping_list/list.html', { 'items': items , 'add': add })
 
 def add_item(request):
 	if request.method == 'POST':
 		add = forms.AddItem(request.POST)
 		#save item to db
-		add.save()
-		return redirect(request.GET.get('next'))
+		if add.is_valid():
+			add.save()
+		return redirect('shopping_list:list')
 	else:
 		add = forms.AddItem()
 	return render(request, 'shopping_list/list.html', { 'add': add })
