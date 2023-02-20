@@ -12,6 +12,7 @@ def add_item(request):
 	if request.method == 'POST':
 		add = forms.AddItem(request.POST)
 		#save item to db
+		add.save()
 		return redirect('shopping_list:list')
 	else:
 		add = forms.AddItem()
