@@ -1,26 +1,44 @@
 {% extends 'shopping_list/base.html' %}
 
 {% block content %}
-
+<center>
+	<ul>
+		<h1>הוסיפי פריט לבחירתך</h1>
+	</ul>
 	<ul>
 		<form class="d-inline-flex" action="{% url 'shopping_list:add_item' %}" method="post" >
 			<div class="d-inline-flex justify-content-between">
+				<button class="btn btn-outline-primary" type="submit">הוספה</button>
 			      {{ add }}
 			      {% csrf_token %}
-			      <button class="btn btn-outline-primary" type="submit">Add</button>
 		    </div>
 		</form>
 		<br>
 	</ul>
-    <div class="items">
-    {% csrf_token %}
-	{% for item in items %}
-	<ul>
-		  <li class="list-group-item">
-		    {{ item }}
-		    <a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">Delete</a>
-		  </li>
-	 </ul>
-	{% endfor %}
-	</div>
+	<div class="d-flex flex-row-reverse">
+		<table class="table ">
+			<tr>
+		      <th class="text-end" scope="col">פעולות</th>
+		      <th class="text-end" scope="col">תגים רלוונטים</th>
+		      <th class="text-end" scope="col">שם הפריט אותו תרצי להוסיף</th>
+		      <th class="text-end" scope="col">מספר</th>
+		     
+	    	</tr>
+	  	</thead>
+	  	<tbody>
+	  	{% for item in items %}
+	    <tr>
+	    	<td class="text-end">
+	      	 <a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">Delete</a>
+	      </td>
+	      	<td class="text-end">
+	      		<a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">Delete</a>
+	      	</td>
+	      <td class="text-end">{{ item }}</td>
+	      <th scope="row" class="text-end">1</th>
+	    </tr>
+	    {% endfor %}
+	  	</tbody>
+		</table>
+</center>
 {% endblock %}

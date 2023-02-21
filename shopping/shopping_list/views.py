@@ -19,7 +19,7 @@ def add_item(request):
 		add = forms.AddItem(request.POST)
 		#save item to db
 		if add.is_valid():
-			if not Item.objects.filter(item=request.POST['item']).exists():
+			if not Item.objects.filter(name=request.POST['name']).exists():
 				add.save()
 		return redirect('shopping_list:list')
 	else:
