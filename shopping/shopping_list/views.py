@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Item
 from . import forms
+from django.http import HttpResponseRedirect
 
 # Delete an item
 def delete_item(request, item_id):
@@ -18,7 +19,8 @@ def add_item(request):
 		add = forms.AddItem(request.POST)
 		#save item to db
 		if add.is_valid():
-			add.save()
+			if not Item.objects.filter(item=request.POST['item']).exists():
+				add.save()
 		return redirect('shopping_list:list')
 	else:
 		add = forms.AddItem()

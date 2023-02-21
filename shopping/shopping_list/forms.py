@@ -11,7 +11,7 @@ class AddItem(forms.ModelForm):
 		widgets = {
 			'item': forms.TextInput(attrs = {
 				'class': 'form-control', 
-				'placeholder':'Item name', 
+				'placeholder':"Item's name", 
 				'style':'width:75%'
 				})
 		}
