@@ -1,12 +1,13 @@
 {% extends 'shopping_list/base.html' %}
 
 {% block content %}
+
 	<ul>
 		<form class="d-inline-flex" action="{% url 'shopping_list:add_item' %}" method="post" >
 			<div class="d-inline-flex justify-content-between">
 			      {{ add }}
 			      {% csrf_token %}
-			      <button class="btn btn-primary" type="submit">Add</button>
+			      <button class="btn btn-outline-primary" type="submit">Add</button>
 		    </div>
 		</form>
 		<br>
@@ -17,7 +18,7 @@
 	<ul>
 		  <li class="list-group-item">
 		    {{ item }}
-		    <a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">Delete item</a>
+		    <a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">Delete</a>
 		  </li>
 	 </ul>
 	{% endfor %}
