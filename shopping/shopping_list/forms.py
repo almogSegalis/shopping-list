@@ -4,14 +4,14 @@ from . import models
 class AddItem(forms.ModelForm):
 	class Meta:
 		model = models.Item
-		fields = ['item']
+		fields = ['name']
 		labels = {
-			'item': '',
+			'name': '',
 		}
 		widgets = {
-			'item': forms.TextInput(attrs = {
+				'name': forms.TextInput(attrs = {
 				'class': 'form-control', 
-				'placeholder':"Item's name", 
-				'style':'width:75%'
+				'placeholder':"הוסיפי פריט", 
+				'style':'width:70%; text-align: right',
 				})
 		}
