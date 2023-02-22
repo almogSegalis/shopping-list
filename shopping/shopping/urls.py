@@ -24,7 +24,6 @@ from django.conf import settings
 urlpatterns = [
     path('shopping_list/', include('shopping_list.urls')),
     path("admin/", admin.site.urls),
-    path('', include('shopping_list.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
