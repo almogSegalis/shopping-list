@@ -2,6 +2,31 @@
 
 {% block content %}
 <center>
+
+	<ul>
+	  {% for tag in tags %}
+	    	<!-- <a class="btn btn-outline-primary btn-sm" href="{% url 'shopping_list:item_list_by_tag' tag.name %}"> -->
+	    	<a 
+	    	{% if active_tag == tag %}
+	    		class="btn btn-primary"
+	    	{% else %}
+	    		class="btn btn-outline-primary"
+	    	{% endif %}
+	    	href="{% url 'shopping_list:item_list_by_tag' tag.name %}">
+	    		{{ tag.name }}
+	    	</a>
+
+	  {% endfor %}
+	 <a href="{% url 'shopping_list:list' %}"
+	 	{% if active_tag is None %}
+	    		class="btn btn-primary"
+	    {% else %}
+	    		class="btn btn-outline-primary"
+	    {% endif %}
+	  class ="btn btn-primary"
+	  >הצג הכל</a>
+	</ul>
+
 	<ul>
 		<h1>הוסיפי פריט לבחירתך</h1>
 	</ul>
