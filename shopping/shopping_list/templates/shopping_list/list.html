@@ -28,13 +28,17 @@
 	  	<tbody>
 	  	{% for item in items %}
 	    <tr>
-	    	<td class="text-end">
-	      	 <a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">Delete</a>
-	      </td>
 	      	<td class="text-end">
 	      		<a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">Delete</a>
 	      	</td>
-	      <td class="text-end">{{ item }}</td>
+	      	<td class="text-end">
+	      		{%for tag in item.tags.all %}
+		      		<span class= "{{ tag.color }}" >
+		      			{{ tag }}
+		      		</span>
+	      		{% endfor %}
+	      	</td>
+	      <td class="text-end">{{ item.name }}</td>
 	      <th scope="row" class="text-end">1</th>
 	    </tr>
 	    {% endfor %}
