@@ -1,73 +1,74 @@
+
+
 {% extends 'shopping_list/base.html' %}
 
 {% block content %}
-<center>
 
-	<ul>
-	  {% for tag in tags %}
-	    	<!-- <a class="btn btn-outline-primary btn-sm" href="{% url 'shopping_list:item_list_by_tag' tag.name %}"> -->
-	    	<a 
-	    	{% if active_tag == tag %}
-	    		class="btn btn-primary"
-	    	{% else %}
-	    		class="btn btn-outline-primary"
-	    	{% endif %}
-	    	href="{% url 'shopping_list:item_list_by_tag' tag.name %}">
-	    		{{ tag.name }}
-	    	</a>
-
-	  {% endfor %}
-	 <a href="{% url 'shopping_list:list' %}"
-	 	{% if active_tag is None %}
-	    		class="btn btn-primary"
-	    {% else %}
-	    		class="btn btn-outline-primary"
-	    {% endif %}
-	  class ="btn btn-primary"
-	  >הצג הכל</a>
-	</ul>
-
-	<ul>
-		<h1>הוסיפי פריט לבחירתך</h1>
-	</ul>
-	<ul>
-		<form class="d-inline-flex" action="{% url 'shopping_list:add_item' %}" method="post" >
-			<div class="d-inline-flex justify-content-between">
-				<button class="btn btn-outline-primary" type="submit">הוספה</button>
-			      {{ add }}
-			      {% csrf_token %}
-		    </div>
-		</form>
-		<br>
-	</ul>
+	<center>
+		<ul>
+			  {% for tag in tags %}
+			    	<!-- <a class="btn btn-outline-primary btn-sm" href="{% url 'shopping_list:item_list_by_tag' tag.name %}"> -->
+			    	<a 
+			    	{% if active_tag == tag %}
+			    		class="btn btn-primary"
+			    	{% else %}
+			    		class="btn btn-outline-primary"
+			    	{% endif %}
+			    	href="{% url 'shopping_list:item_list_by_tag' tag.name %}">
+			    		{{ tag.name }}
+			    	</a>
+			  {% endfor %}
+			 <a href="{% url 'shopping_list:list' %}"
+			 	{% if active_tag is None %}
+			    		class="btn btn-primary"
+			    {% else %}
+			    		class="btn btn-outline-primary"
+			    {% endif %}
+			  class ="btn btn-primary"
+			  >הצג הכל</a>
+		</ul>
+	</center>
+	<br>
 	<div class="d-flex flex-row-reverse">
 		<table class="table ">
-			<tr>
-		      <th class="text-end" scope="col">פעולות</th>
-		      <th class="text-end" scope="col">תגים רלוונטים</th>
-		      <th class="text-end" scope="col">שם הפריט אותו תרצי להוסיף</th>
-		      <th class="text-end" scope="col">מספר</th>
-		     
-	    	</tr>
-	  	</thead>
-	  	<tbody>
-	  	{% for item in items %}
-	    <tr>
-	      	<td class="text-end">
-	      		<a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">Delete</a>
-	      	</td>
-	      	<td class="text-end">
-	      		{%for tag in item.tags.all %}
-		      		<span class= "{{ tag.color }}" >
-		      			{{ tag }}
-		      		</span>
-	      		{% endfor %}
-	      	</td>
-	      <td class="text-end">{{ item.name }}</td>
-	      <th scope="row" class="text-end">1</th>
-	    </tr>
-	    {% endfor %}
-	  	</tbody>
+			<thead>
+				<tr>
+			      <th class="text-end" scope="col">פעולות</th>
+			      <th class="text-end" scope="col">תגים רלוונטים</th>
+			      <th class="text-end" scope="col">שם הפריט אותו תרצי להוסיף</th>
+			      <th class="text-end" scope="col">מספר</th>
+	    		</tr>
+	  		</thead>
+	  		<tbody>
+	  			{% for item in items %}
+				    <tr>
+				      	<td class="text-end">
+				      		<a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">הסר</a>
+				      	</td>
+				      	<td class="text-end">
+				      		{%for tag in item.tags.all %}
+					      		<span class= "badge bg-{{ tag.color }}" >
+					      			{{ tag }}
+					      		</span>
+				      		{% endfor %}
+				      	</td>
+				      <td class="text-end">{{ item.name }}</td>
+				      <th scope="row" class="text-end">1</th>
+				    </tr>
+			    {% endfor %}
+			</tbody>
 		</table>
-</center>
+	</div>
+	<div class="d-flex flex-row-reverse">
+		<ul>
+			<form class="d-inline-flex" action="{% url 'shopping_list:add_item' %}" method="post" >
+				<div class="d-inline-flex justify-content-between">
+					<button class="btn btn-outline-primary" type="submit">הוספה</button>
+				      {{ add }}
+				      {% csrf_token %}
+			    </div>
+			</form>
+			<br>
+		</ul>
+	</div>
 {% endblock %}
