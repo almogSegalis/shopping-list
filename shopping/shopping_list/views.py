@@ -6,21 +6,30 @@ from django.http import HttpResponseRedirect
 # Delete an item
 def delete_item(request, item_id):
 	item = Item.objects.get(pk=item_id)
-	item.delete()
+	item.is_active = False
+	item.save()
 	return redirect('shopping_list:list')
 
 
 def add_item(request):
-	if request.method == 'POST':
-		add = forms.AddItem(request.POST)
-		#save item to db
-		if add.is_valid():
-			if not Item.objects.filter(name=request.POST['name']).exists():
-				add.save()
-		return redirect('shopping_list:list')
-	else:
-		add = forms.AddItem()
-	return render(request, 'shopping_list/list.html', { 'add': add })
+    if request.method == 'POST':
+        add = forms.AddItem(request.POST)
+        # save item to db
+        if add.is_valid():
+            item_name = request.POST['name']
+            item, created = Item.objects.get_or_create(name=item_name)
+            if created or not item.is_active:
+                item.is_active = True
+                item.save()
+            else:
+                # Item already exists and is active
+                pass
+            
+            return redirect('shopping_list:list')
+    else:
+        add = forms.AddItem()
+    
+    return render(request, 'shopping_list/list.html', { 'add': add })
 
 
 def main_shopping_list(request, tag_name=None):
