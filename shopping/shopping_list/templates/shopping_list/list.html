@@ -7,12 +7,11 @@
 	<center>
 		<ul>
 			  {% for tag in tags %}
-			    	<!-- <a class="btn btn-outline-primary btn-sm" href="{% url 'shopping_list:item_list_by_tag' tag.name %}"> -->
 			    	<a 
 			    	{% if active_tag == tag %}
-			    		class="btn btn-primary"
+			    		class="btn btn-{{ tag.color }}"
 			    	{% else %}
-			    		class="btn btn-outline-primary"
+			    		class="btn btn-outline-{{ tag.color }}"
 			    	{% endif %}
 			    	href="{% url 'shopping_list:item_list_by_tag' tag.name %}">
 			    		{{ tag.name }}
@@ -30,7 +29,7 @@
 	</center>
 	<br>
 	<div class="d-flex flex-row-reverse">
-		<table class="table ">
+		<table class="table" style="height: 80px;">
 			<thead>
 				<tr>
 			      <th class="text-end" scope="col">פעולות</th>
@@ -43,18 +42,24 @@
 	  			{% for item in items %}
 	  				{% if item.is_active == True %}
 				    <tr>
-				      	<td class="text-end">
-				      		<a href="{% url 'shopping_list:delete_item' item.id %}" class ="btn btn-outline-danger btn-sm">הסר</a>
+				      	<td class="text-end align-baseline">
+				      		<a href="{% url 'shopping_list:delete_item' item.id %}">
+							  <button type="button" class="btn btn-outline-danger btn-sm">
+							    <svg id="i-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="15" height="25" fill="none" stroke="red" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+							      <path d="M2 30 L30 2 M30 30 L2 2" />
+							    </svg>
+							  </button>
+							</a>
 				      	</td>
-				      	<td class="text-end">
+			      	<td class="text-end align-baseline">
 				      		{%for tag in item.tags.all %}
 					      		<span class= "badge bg-{{ tag.color }}" >
 					      			{{ tag }}
 					      		</span>
 				      		{% endfor %}
 				      	</td>
-				      <td class="text-end">{{ item.name }}</td>
-				      <th scope="row" class="text-end">1</th>
+				      <td class="text-end align-baseline">{{ item.name }}</td>
+				      <th scope="row" class="text-end align-baseline">1</th>
 				    </tr>
 					{% endif %}
 			    {% endfor %}
