@@ -4,6 +4,7 @@
 
 {% block content %}
 
+	<!-- tags filter section -->
 	<center>
 		<ul>
 			  {% for tag in tags %}
@@ -28,44 +29,10 @@
 		</ul>
 	</center>
 	<br>
-	<div class="d-flex flex-row-reverse">
-		<table class="table" style="height: 80px;">
-			<thead>
-				<tr>
-			      <th class="text-end" scope="col">פעולות</th>
-			      <th class="text-end" scope="col">תגים רלוונטים</th>
-			      <th class="text-end" scope="col">שם הפריט אותו תרצי להוסיף</th>
-			      <th class="text-end" scope="col">מספר</th>
-	    		</tr>
-	  		</thead>
-	  		<tbody>
-	  			{% for item in items %}
-	  				{% if item.is_active == True %}
-				    <tr>
-				      	<td class="text-end align-baseline">
-				      		<a href="{% url 'shopping_list:delete_item' item.id %}">
-							  <button type="button" class="btn btn-outline-danger btn-sm">
-							    <svg id="i-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="15" height="25" fill="none" stroke="red" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
-							      <path d="M2 30 L30 2 M30 30 L2 2" />
-							    </svg>
-							  </button>
-							</a>
-				      	</td>
-			      	<td class="text-end align-baseline">
-				      		{%for tag in item.tags.all %}
-					      		<span class= "badge bg-{{ tag.color }}" >
-					      			{{ tag }}
-					      		</span>
-				      		{% endfor %}
-				      	</td>
-				      <td class="text-end align-baseline">{{ item.name }}</td>
-				      <th scope="row" class="text-end align-baseline">1</th>
-				    </tr>
-					{% endif %}
-			    {% endfor %}
-			</tbody>
-		</table>
-	</div>
+
+	{% include 'shopping_list/table_of_items.html' %}
+
+	<!-- add item section -->
 	<div class="d-flex flex-row-reverse">
 		<ul>
 			<form class="d-inline-flex" action="{% url 'shopping_list:add_item' %}" method="post" >
