@@ -75,6 +75,8 @@ def get_items_name_tiv():
     df = get_values_table_tiv()
     for index, value in df['שם'].iteritems():
         item_list.append(value)
+    with open('list_of_items.text', 'w') as file:
+        file.write(str(item_list))
     return item_list
 
-
+get_items_name_tiv()
