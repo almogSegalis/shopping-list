@@ -1,4 +1,4 @@
-# shopping-list
+# Shopping list
 Shopping List is a simple web application that allows users to keep track of their grocery shopping list. Users can add and remove items from the list, and can also assign tags to each item for better organization.
 
 ## Requirements
