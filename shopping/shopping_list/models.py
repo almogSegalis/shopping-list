@@ -27,9 +27,9 @@ class Item(models.Model):
         return self.name
 
 class Order(models.Model):
-    venue_name = models.ForeignKey(Tag, blank=True, null=True, on_delete=models.SET_NULL)
+    venue_name = models.ForeignKey(Tag, blank=True, null=True, on_delete=models.CASCADE)
     order_time = models.DateTimeField()
-    order_num =  models.CharField(max_length=100, default='')
+    order_num =  models.IntegerField(max_length=100, default='')
 
     # Field for items in the order
     items = models.ManyToManyField(Item)
@@ -58,6 +58,7 @@ def get_items_name_tiv(file):
     return item_list
 
 
+# inisialize the orders with data from emails
 for filename in os.listdir(folder_path):
     if os.path.isfile(os.path.join(folder_path, filename)):
         if filename != '.DS_Store':
@@ -66,9 +67,10 @@ for filename in os.listdir(folder_path):
                 items = get_items_name_tiv(file_path)
                 s = filename
                 # Extract the date and time values using regular expressions
-                msg_id = re.search(r"_id_([a-z0-9]+)", s).group(1)
+                msg_id = re.search(r"_id_([0-9]+)", s).group(1)
                 date_str = re.search(r'_date_([0-9]{2}-[0-9]{2}-[0-9]{4})_', s).group(1)
                 time_str = re.search(r'_time_([0-9]{2}-[0-9]{2})', s).group(1)
+                
                 # Convert the date and time strings to datetime objects
                 order_datetime = datetime.datetime.strptime(f'{date_str} {time_str}', '%d-%m-%Y %H-%M')
 
@@ -78,28 +80,26 @@ for filename in os.listdir(folder_path):
                 # Check if the order already exists
                 existing_order = Order.objects.filter(order_time=order_time).first()
 
+                # Get the specific tag to add to the item
+                tag_name = "טיב טעם"
+                tag = Tag.objects.filter(name=tag_name).first()
+
                 if existing_order:
                     # Order already exists, skip creating a new one and add items to existing order
                     order = existing_order
                 else:
                     # Order does not exist, create a new one
-                    order = Order.objects.create(order_time=order_time, order_num=msg_id)
+                    order = Order.objects.create(venue_name=tag, order_time=order_time, order_num=msg_id)
 
                 for item_name in items:
                     item, created = Item.objects.get_or_create(name=item_name)
                     if created:
-                        item.is_active = False;
+                        item.is_active = False
+                        item.tags.add(tag)
                         item.save()
-                    order.items.add(item)
-
-
-#             # if tag is not None:
-#             #     for item_name in items_list:
-#             #         item, created = Item.objects.get_or_create(name=item_name)
-#             #         if created:
-#             #             item.tags.add(tag)
-#             # else:
-#             #     # handel the case the tag doesnot exist
-#             #     for item_name in items_list:
-#             #         item = Item.objects.get_or_create(name=item_name)
-
+                        order.items.add(item)
+                    else:
+                        # Handle the case where the item exist
+                        item.tags.add(tag)
+                        item.save()
+                        order.items.add(item)

@@ -32,6 +32,18 @@ def add_item(request):
     return render(request, 'shopping_list/list.html', { 'add': add })
 
 
+# # Get last orderd time for statistics.
+# # TODO - check if this function works. 
+# def find_the_last_date(item_name):
+# 	last_date=""
+# 	orders = order.object.all().order_by('date')
+#     for order in orders:
+#     	if item_name in order.items:
+#     		last_date=order.objects.get(order_time)
+#     	else:
+#     		last_date=null
+
+
 def main_shopping_list(request, tag_name=None):
 	active_tag = None
 	items = Item.objects.all().order_by('date')

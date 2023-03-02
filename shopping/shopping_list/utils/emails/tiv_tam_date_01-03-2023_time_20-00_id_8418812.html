@@ -1,0 +1,533 @@
+Message ID: 1869d45b11ff368a
+Body:
+<html><body>
+	
+
+    <div class="div-to-multi" ng-init="orderData.counter = 0;" ng-style="{direction: ('css_direction' | translate), 'text-align': ('css_text_align' | translate)}" style="position: relative; direction: rtl; text-align: right;">
+		<div class="center" style="text-align: center;">
+			<!-- ngIf: retailerLogoSrc && (!$root.confirmationEmailDesign || !$root.confirmationEmailDesign.logoComponent || !$root.confirmationEmailDesign.logoComponent.isCustom) --><a href="https://u6159356.ct.sendgrid.net/ls/click?upn=MAWUqqWD3HvlWdZc-2B7fHfTDnI1COSvtbr-2FTGtC59JArGGfAyuaJELMSHotcRj-2BMXY7w1glitrlM-2FJ63-2F9NSZqW8QWr5LXFhyMQ9o6DKoYhhT8Il-2BD-2BdCajfhB7aqBnc-2Bpfdw0AXpJprXz1IiJwXtwJNjK8oTie80RglBXeS-2BqDA-3DBmWg_DhWX6cNkEyul3iUuXMm8aBHPn4Y1B6zLpvWykYvoUPtWO5JdxxEJD0B-2BNCeTtmA4aA6DJVq8NyqhBYjDj94lp76fgc4-2Be9YCd4dimPZ7Cw-2FaXCcWqwSnzUb-2BagjZzxOXwT3QprKWZ-2FpGpI-2BDFc4kv0vYIqpSqxrA9K2osEZFSOUsgV31pItEZiavqbtm9jXoKbbOsL-2FXIMCkGsIxLJ83Gtx-2BXoIfU2NoMwzN-2FMAiZLqIQdGNfxmm4E3iieT-2F-2BNwV" ng-if="retailerLogoSrc &amp;&amp; (!$root.confirmationEmailDesign || !$root.confirmationEmailDesign.logoComponent || !$root.confirmationEmailDesign.logoComponent.isCustom)" class="ng-scope">
+				<img class="logo" src="https://d226b0iufwcjmj.cloudfront.net/retailers/1062/logo.png?0.11566895948753841" style="max-height: 4em; max-width: 6em;">
+			</a><!-- end ngIf: retailerLogoSrc && (!$root.confirmationEmailDesign || !$root.confirmationEmailDesign.logoComponent || !$root.confirmationEmailDesign.logoComponent.isCustom) -->
+			<!-- ngIf: !!$root.confirmationEmailDesign && !!$root.confirmationEmailDesign.logoComponent && $root.confirmationEmailDesign.logoComponent.isCustom && $root.confirmationEmailDesign.logoComponent.pictureUrl -->
+			<div>
+				<span class="right ng-binding" style="display: block; text-align: right;"></span>
+				<span class="header ng-binding" style="display: block; font-size: 6mm;">
+                מס' הזמנה
+                8418812 <!-- ngIf: orderData.foreignOrderId -->
+				</span>
+
+				<!-- ngIf: orderData.shippingTimeFrom && orderData.deliveryTimeTypeId !== $root.DELIVERY_TIME_TYPES.DELIVERY_WITHIN_DAYS --><div ng-if="orderData.shippingTimeFrom &amp;&amp; orderData.deliveryTimeTypeId !== $root.DELIVERY_TIME_TYPES.DELIVERY_WITHIN_DAYS" class="ng-binding ng-scope">
+					זמן משלוח:
+					<!-- ngIf: !retailerDetails.twoHourLaw || isPickup -->
+					<!-- ngIf: retailerDetails.twoHourLaw && !isPickup --><span style="direction: ltr; display: inline-block;" ng-if="retailerDetails.twoHourLaw &amp;&amp; !isPickup" class="ng-binding ng-scope">
+						01/03/2023
+						20:00
+					</span><!-- end ngIf: retailerDetails.twoHourLaw && !isPickup -->
+					<!-- ngIf: retailerDetails.twoHourLaw && !isPickup --><span style="display: block; text-align: center;" ng-if="retailerDetails.twoHourLaw &amp;&amp; !isPickup" class="ng-binding ng-scope">
+						אספקה תוך שעתיים מהמועד הנבחר
+					</span><!-- end ngIf: retailerDetails.twoHourLaw && !isPickup -->
+				</div><!-- end ngIf: orderData.shippingTimeFrom && orderData.deliveryTimeTypeId !== $root.DELIVERY_TIME_TYPES.DELIVERY_WITHIN_DAYS -->
+				<!-- ngIf: orderData.shippingTimeFrom && orderData.deliveryTimeTypeId === $root.DELIVERY_TIME_TYPES.DELIVERY_WITHIN_DAYS -->
+				<!-- ngIf: orderData.pickupBranch && !$root.retailerDetails.isHiddenBranchName --><div ng-if="orderData.pickupBranch &amp;&amp; !$root.retailerDetails.isHiddenBranchName" class="ng-binding ng-scope">
+					חנות: רמת החייל
+				</div><!-- end ngIf: orderData.pickupBranch && !$root.retailerDetails.isHiddenBranchName -->
+				<!-- ngIf: orderData.pickupBranch && !$root.retailerDetails.isHiddenBranchName --><div ng-if="orderData.pickupBranch &amp;&amp; !$root.retailerDetails.isHiddenBranchName" class="ng-binding ng-scope">
+					כתובת: דבורה הנביאה 122, תל אביב יפו (מכבדים סיבוס ותן ביס בסניף)
+				</div><!-- end ngIf: orderData.pickupBranch && !$root.retailerDetails.isHiddenBranchName -->
+				<!-- ngIf: retailerDetails.contactPhone --><div ng-if="retailerDetails.contactPhone" class="ng-binding ng-scope">
+					טלפון קשר בחנות: 1-800-290-000
+				</div><!-- end ngIf: retailerDetails.contactPhone -->
+			</div>
+
+			<!-- ngIf: isEmail --><div style="width:100%;min-width:100%;" ng-if="isEmail" class="ng-scope">
+                <!-- ngIf: !$root.confirmationEmailDesign || !$root.confirmationEmailDesign.imageComponent || !$root.confirmationEmailDesign.imageComponent.isCustom --><span style="display: block; min-width: 100%; padding: 0.5em 0.5em 0 0.5em; width: 100%;" ng-if="!$root.confirmationEmailDesign || !$root.confirmationEmailDesign.imageComponent || !$root.confirmationEmailDesign.imageComponent.isCustom" class="ng-scope">
+                    <!-- ngIf: isPickup -->
+                    <!-- ngIf: !isPickup --><img ng-if="!isPickup" style="background-color: #006930;width:100%;max-height:24em;" src="https://d226b0iufwcjmj.cloudfront.net/global/email-icons/delivery-icon-he.png" class="ng-scope"><!-- end ngIf: !isPickup -->
+                </span><!-- end ngIf: !$root.confirmationEmailDesign || !$root.confirmationEmailDesign.imageComponent || !$root.confirmationEmailDesign.imageComponent.isCustom -->
+				<!-- ngIf: !!$root.confirmationEmailDesign && !!$root.confirmationEmailDesign.imageComponent && $root.confirmationEmailDesign.imageComponent.isCustom -->
+				<!-- ngIf: !isPickup && $root.confirmationEmailDesign.textComponent && $root.confirmationEmailDesign.textComponent.delivery && $root.confirmationEmailDesign.textComponent.delivery.text -->
+				<!-- ngIf: isPickup && $root.confirmationEmailDesign.textComponent && $root.confirmationEmailDesign.textComponent.pickup && $root.confirmationEmailDesign.textComponent.pickup.text -->
+			</div><!-- end ngIf: isEmail -->
+		</div>
+
+		<div style="display:inline-block;">
+			<table class="order-info general-info" style="font-size: 3.5mm; margin-top: 2mm; padding-bottom: 3mm; padding-top: 3mm;">
+				<tbody style="display: table-row-group;"><tr>
+					<td class="td-title" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">שם:</span></td>
+					<td class="td-text" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 265px;" width="265px"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">almog סגליס</span></td>
+				</tr>
+				<tr>
+					<td class="td-title" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">מספר טלפון:</span></td>
+					<td class="td-text" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 265px;" width="265px"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">+972509604892</span></td>
+				</tr>
+				<tr>
+					<td class="td-title" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">דוא"ל:</span></td>
+					<td class="td-text" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 265px;" width="265px"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">almogsegalis@gmail.com</span></td>
+				</tr>
+				<tr>
+					<td class="td-title" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding"> החלפות:</span></td>
+					<td class="td-text" width="265px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 265px;">
+						<span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">שלחו לי SMS</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-title" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding"> סוג משלוח:</span></td>
+					<td class="td-text" width="265px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 265px;"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">משלוח</span>
+					</td>
+				</tr>
+				<!-- ngIf: boxes || !isEmail -->
+				<!-- ngIf: !isPickup --><tr ng-if="!isPickup" class="ng-scope">
+					<td class="td-title" width="150px" valign="top" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">כתובת:</span></td>
+					<td class="td-text" width="265px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 265px;">
+						<span style="display: block; line-height: 1.1; margin: 0; padding: 0; width: 50%;" class="ng-binding">האמוראים 5, קומה 2, דירה 7, tel-aviv, 6920723</span>
+						<!-- ngIf: orderData.leaveByTheDoor -->
+					</td>
+				</tr><!-- end ngIf: !isPickup -->
+				<!-- ngIf: isPickup -->
+				<tr>
+					<!-- ngIf: orderData.comments || orderData.shippingComments -->
+					<!-- ngIf: orderData.comments || orderData.shippingComments -->
+				</tr>
+			</tbody></table>
+		</div>
+
+		<div style="display:inline-block; vertical-align: top;">
+			<!-- ngIf: !isWithMetaData --><table class="order-info general-info ng-scope" ng-if="!isWithMetaData" style="font-size: 3.5mm; margin-top: 2mm; padding-bottom: 3mm; padding-top: 3mm;">
+				<tbody style="display: table-row-group;"><tr>
+					<td class="td-title" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;">
+						<!-- ngIf: !isWithoutPrice -->
+					</td>
+					<td class="td-text-2" width="215px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 215px;">
+						<!-- ngIf: !isWithoutPrice -->
+					</td>
+				</tr>
+				<tr>
+					<td class="td-title" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;"><!-- ngIf: !isWithoutPrice --></td>
+					<td class="td-text-2" width="215px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 215px;">
+                        <!-- ngIf: orderData.deliveryItem && !isWithoutPrice -->
+						<!-- ngIf: !orderData.deliveryItem && !isWithoutPrice -->
+					</td>
+				</tr>
+				<tr>
+					<td class="td-title" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;">
+						<!-- ngIf: orderData.totalDiscount && !isWithoutPrice -->
+					</td>
+					<td class="td-text-2" width="215px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 215px;">
+						<!-- ngIf: orderData.totalDiscount && !isWithoutPrice -->
+					</td>
+				</tr>
+				<tr>
+					<td class="td-title" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;"><!-- ngIf: orderData.totalClubDiscount && !isWithoutPrice -->
+					</td>
+					<td class="td-text-2" width="215px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 215px;">
+						<!-- ngIf: orderData.totalClubDiscount && !isWithoutPrice -->
+					</td>
+				</tr>
+				<!-- ngIf: orderData.multiPassGift && !isWithoutPrice -->
+				<tr>
+					<td class="td-title" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;"><!-- ngIf: !isWithoutPrice --></td>
+					<td class="td-text-2" width="215px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 215px;">
+						<!-- ngIf: !isWithoutPrice -->
+					</td>
+				</tr>
+				<tr>
+					<!-- ngIf: !orderData.lastFourDigits && orderData.paymentMethodId !== PAYMENT_METHODS.STORE_CREDIT -->
+					<!-- ngIf: !orderData.lastFourDigits && orderData.paymentMethodId !== PAYMENT_METHODS.STORE_CREDIT -->
+					<!-- ngIf: orderData.lastFourDigits --><td class="td-title ng-scope" width="150px" ng-if="orderData.lastFourDigits" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">כרטיס אשראי:</span></td><!-- end ngIf: orderData.lastFourDigits -->
+					<!-- ngIf: orderData.lastFourDigits --><td class="td-text-2 ng-scope" width="215px" ng-if="orderData.lastFourDigits" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 215px;"><span style="display: block; line-height: 1.1; margin: 0; padding: 0;" class="ng-binding">**** **** **** 9543</span></td><!-- end ngIf: orderData.lastFourDigits -->
+					<!-- ngIf: orderData.paymentMethodId === PAYMENT_METHODS.STORE_CREDIT -->
+					<!-- ngIf: orderData.paymentMethodId === PAYMENT_METHODS.STORE_CREDIT -->
+				</tr>
+				<!-- ngRepeat: payment in paymentsData.payments --><!-- ngIf: paymentsData.payments --><tr ng-if="paymentsData.payments" ng-repeat="payment in paymentsData.payments" class="ng-scope">
+					<td class="td-title ng-binding" width="150px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 170px;">חיוב כרטיס אשראי:</td>
+					<td class="td-text-2 ng-binding" width="215px" style="line-height: 1.1; margin: 0; padding: 2px 1px; width: 215px;">₪330.56</td>
+				</tr><!-- end ngIf: paymentsData.payments --><!-- end ngRepeat: payment in paymentsData.payments -->
+				<!-- ngIf: !isEmail && !!orderData.isAlreadyCollected -->
+			</tbody></table><!-- end ngIf: !isWithMetaData -->
+
+			<!-- ngIf: isWithMetaData -->
+			<!-- ngRepeat: payment in paymentsData.payments --><!-- ngIf: isWithMetaData && paymentsData && paymentsData.payments && orderData.paymentMethodId === PAYMENT_METHODS.CREDIT_CARD --><!-- end ngRepeat: payment in paymentsData.payments -->
+
+		</div>
+		<!-- ngIf: !isUpdateOrder && paymentsData.ebtPayment -->
+
+		<!-- ngIf: updateEBTPayments && updateEBTPayments.length -->
+
+		<br>
+
+		<!-- ngIf: paymentsData.ebtPayment -->
+
+		<!-- ngIf: $root.confirmationEmailDesign.secondTextComponent && $root.confirmationEmailDesign.secondTextComponent.text -->
+
+		<!-- ngIf: loyalties.length && isLoyaltySettings && isMemberClubSettings -->
+
+		<!-- ngIf: (!loyalties.length || !orderData.isPointLoyaltyClubMember && pointsLoyaltyClubId) && isLoyaltySettings && isNotMemberClubSettings -->
+
+		<table class="order-item-table no-border-inline" style="border: 0.3mm solid #d6d6d6; border-collapse: collapse; margin-top: 6mm; min-width: 3mm; page-break-after: always; width: 100%;">
+			<thead style="display: table-header-group;">
+			<tr>
+				<td style="border: 0.3mm solid #d6d6d6; page-break-inside: avoid;"></td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; padding: 2.5mm !important; page-break-inside: avoid;">שם</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; padding: 2.5mm !important; page-break-inside: avoid;">מותג</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; page-break-inside: avoid; text-align: center;">גודל / כמות</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-binding ng-scope" style="border: 0.3mm solid #d6d6d6; page-break-inside: avoid; text-align: center;">כמות</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr>
+			</thead>
+			<!-- ngRepeat: group in itemsByGroups | orderBy:['sort', '-id'] --><tbody ng-repeat="group in itemsByGroups | orderBy:['sort', '-id']" style="display: table-row-group;" class="ng-scope">
+
+			<!-- ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) --><tr ng-if="isHasGroups &amp;&amp; !(group.items.length === 1 &amp;&amp; (group.items[0].type ===2 || group.items[0].type === 6))" class="ng-scope">
+				<td colspan="42" class="group-order border ng-binding" style="background-color: #d6d6d6; border: 0.3mm solid #d6d6d6; font-weight: bold; height: 6mm; max-height: 15mm; max-width: 30mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> פארם ותינוקות</td>
+			</tr><!-- end ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) -->
+
+			<!-- ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">1</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> ג'ל גילוח לעור רגיש</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					אדג'
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 238 גרם</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 1 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) -->
+			</tbody><!-- end ngRepeat: group in itemsByGroups | orderBy:['sort', '-id'] --><tbody ng-repeat="group in itemsByGroups | orderBy:['sort', '-id']" style="display: table-row-group;" class="ng-scope">
+
+			<!-- ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) --><tr ng-if="isHasGroups &amp;&amp; !(group.items.length === 1 &amp;&amp; (group.items[0].type ===2 || group.items[0].type === 6))" class="ng-scope">
+				<td colspan="42" class="group-order border ng-binding" style="background-color: #d6d6d6; border: 0.3mm solid #d6d6d6; font-weight: bold; height: 6mm; max-height: 15mm; max-width: 30mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> עדן טבע</td>
+			</tr><!-- end ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) -->
+
+			<!-- ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">2</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> משקה סויה בטעם וניל</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					תנובה אלטרנטיב
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 1 ליטר</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 5 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) -->
+			</tbody><!-- end ngRepeat: group in itemsByGroups | orderBy:['sort', '-id'] --><tbody ng-repeat="group in itemsByGroups | orderBy:['sort', '-id']" style="display: table-row-group;" class="ng-scope">
+
+			<!-- ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) --><tr ng-if="isHasGroups &amp;&amp; !(group.items.length === 1 &amp;&amp; (group.items[0].type ===2 || group.items[0].type === 6))" class="ng-scope">
+				<td colspan="42" class="group-order border ng-binding" style="background-color: #d6d6d6; border: 0.3mm solid #d6d6d6; font-weight: bold; height: 6mm; max-height: 15mm; max-width: 30mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> משקאות</td>
+			</tr><!-- end ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) -->
+
+			<!-- ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">3</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> מים מינרליים</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					עין גדי
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 2 ליטר</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 3 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) -->
+			</tbody><!-- end ngRepeat: group in itemsByGroups | orderBy:['sort', '-id'] --><tbody ng-repeat="group in itemsByGroups | orderBy:['sort', '-id']" style="display: table-row-group;" class="ng-scope">
+
+			<!-- ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) --><tr ng-if="isHasGroups &amp;&amp; !(group.items.length === 1 &amp;&amp; (group.items[0].type ===2 || group.items[0].type === 6))" class="ng-scope">
+				<td colspan="42" class="group-order border ng-binding" style="background-color: #d6d6d6; border: 0.3mm solid #d6d6d6; font-weight: bold; height: 6mm; max-height: 15mm; max-width: 30mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> דגני בוקר, שוקולד, חטיפים, עוגות ועוגיות</td>
+			</tr><!-- end ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) -->
+
+			<!-- ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">4</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> שיבולת שועל דקה</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					שקדיה
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 500 גרם</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 2 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">5</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> בייגלה שמיניות עם מלח</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					אסם
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 80 גרם</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 1 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) -->
+			</tbody><!-- end ngRepeat: group in itemsByGroups | orderBy:['sort', '-id'] --><tbody ng-repeat="group in itemsByGroups | orderBy:['sort', '-id']" style="display: table-row-group;" class="ng-scope">
+
+			<!-- ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) --><tr ng-if="isHasGroups &amp;&amp; !(group.items.length === 1 &amp;&amp; (group.items[0].type ===2 || group.items[0].type === 6))" class="ng-scope">
+				<td colspan="42" class="group-order border ng-binding" style="background-color: #d6d6d6; border: 0.3mm solid #d6d6d6; font-weight: bold; height: 6mm; max-height: 15mm; max-width: 30mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> הבולנז'רי והפטיסרי ומאפים</td>
+			</tr><!-- end ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) -->
+
+			<!-- ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">6</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> 10 פיתות במרקם מיוחד</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					פיתה אקספרס
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 10</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 2 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">7</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> מיני קרוטונים מתובלים</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					אסם
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 250 גרם</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 1 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">8</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> פנקו פרורי לחם יפניים</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					מזרח ומערב
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 200 גרם</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 3 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) -->
+			</tbody><!-- end ngRepeat: group in itemsByGroups | orderBy:['sort', '-id'] --><tbody ng-repeat="group in itemsByGroups | orderBy:['sort', '-id']" style="display: table-row-group;" class="ng-scope">
+
+			<!-- ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) --><tr ng-if="isHasGroups &amp;&amp; !(group.items.length === 1 &amp;&amp; (group.items[0].type ===2 || group.items[0].type === 6))" class="ng-scope">
+				<td colspan="42" class="group-order border ng-binding" style="background-color: #d6d6d6; border: 0.3mm solid #d6d6d6; font-weight: bold; height: 6mm; max-height: 15mm; max-width: 30mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> מוצרים מקוררים, חלב וביצים</td>
+			</tr><!-- end ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) -->
+
+			<!-- ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">9</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> ביצים גדולות - מחיר בפיקוח ממשלתי</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					ביצי רמות השבים
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 12 יח'</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 1 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">10</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> ביצים M - מחיר בפיקוח ממשלתי</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> </td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 1 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) -->
+			</tbody><!-- end ngRepeat: group in itemsByGroups | orderBy:['sort', '-id'] --><tbody ng-repeat="group in itemsByGroups | orderBy:['sort', '-id']" style="display: table-row-group;" class="ng-scope">
+
+			<!-- ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) --><tr ng-if="isHasGroups &amp;&amp; !(group.items.length === 1 &amp;&amp; (group.items[0].type ===2 || group.items[0].type === 6))" class="ng-scope">
+				<td colspan="42" class="group-order border ng-binding" style="background-color: #d6d6d6; border: 0.3mm solid #d6d6d6; font-weight: bold; height: 6mm; max-height: 15mm; max-width: 30mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> מכלת, אפיה ובישול</td>
+			</tr><!-- end ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) -->
+
+			<!-- ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">11</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> מרק שעועית צ'ילי אורגני</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					אאוגה
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 400 גרם</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 1 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">12</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> שמן קנולה</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					מילומור
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 1 ליטר</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 1 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) -->
+			</tbody><!-- end ngRepeat: group in itemsByGroups | orderBy:['sort', '-id'] --><tbody ng-repeat="group in itemsByGroups | orderBy:['sort', '-id']" style="display: table-row-group;" class="ng-scope">
+
+			<!-- ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) --><tr ng-if="isHasGroups &amp;&amp; !(group.items.length === 1 &amp;&amp; (group.items[0].type ===2 || group.items[0].type === 6))" class="ng-scope">
+				<td colspan="42" class="group-order border ng-binding" style="background-color: #d6d6d6; border: 0.3mm solid #d6d6d6; font-weight: bold; height: 6mm; max-height: 15mm; max-width: 30mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> השוק שלנו</td>
+			</tr><!-- end ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) -->
+
+			<!-- ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">13</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> שום ברשת</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> </td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 1 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">14</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> עגבניות שרי תמר לב</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> 500 גרם</td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable --><span ng-if="!product.isWeightable" style="display: block;" class="ng-binding ng-scope"> 1 </span><!-- end ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">15</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> מלפפונים</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> </td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable --><span ng-if="product.isWeightable" style="display: block;" class="ng-scope">
+						<!-- ngIf: product.weighableProductUnits -->
+						<div class="ng-binding"> 1.000 ק"ג</div>
+					</span><!-- end ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><tr ng-repeat="product in group.items | orderByLocation:!!($index%2)" class="border ng-scope" ng-if="product.type !== 2 &amp;&amp; product.type !== 6" ng-init="product.counter = orderData.counter; orderData.counter = orderData.counter+ 1;" ng-class="{'substitute-line': product.status == 3 || product.status == 5}">
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">16</td>
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;"> לימון</td>
+				<!-- ngIf: !isEmail -->
+				<td class="product-name ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 2.5mm !important; page-break-inside: avoid; vertical-align: middle;">
+					
+				</td>
+				<td class="center ng-binding" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;"> </td>
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 7) --><td ng-if="!(isEmail &amp;&amp; orderData.nativeStatus == 7)" class="center ng-scope" style="border: 0.3mm solid #d6d6d6; max-height: 15mm; max-width: 30mm; min-width: 3mm; padding: 0.5mm; page-break-inside: avoid; text-align: center; vertical-align: middle;">
+					<!-- ngIf: product.isWeightable --><span ng-if="product.isWeightable" style="display: block;" class="ng-scope">
+						<!-- ngIf: product.weighableProductUnits -->
+						<div class="ng-binding"> 1.000 ק"ג</div>
+					</span><!-- end ngIf: product.isWeightable -->
+					<!-- ngIf: !product.isWeightable -->
+				</td><!-- end ngIf: !(isEmail && orderData.nativeStatus == 7) -->
+				<!-- ngIf: !(isEmail && orderData.nativeStatus == 1) -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: !isWithoutPrice -->
+				<!-- ngIf: (columnsExist.comments || columnsExist.productPropertyValue) -->
+				<!-- ngIf: columnsExist.adminComments && !isEmail -->
+			</tr><!-- end ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) -->
+			</tbody><!-- end ngRepeat: group in itemsByGroups | orderBy:['sort', '-id'] --><tbody ng-repeat="group in itemsByGroups | orderBy:['sort', '-id']" style="display: table-row-group;" class="ng-scope">
+
+			<!-- ngIf: isHasGroups && !(group.items.length === 1 && (group.items[0].type ===2 || group.items[0].type === 6)) -->
+
+			<!-- ngRepeat: product in group.items | orderByLocation:!!($index%2) --><!-- ngIf: product.type !== 2 && product.type !== 6 --><!-- end ngRepeat: product in group.items | orderByLocation:!!($index%2) -->
+			</tbody><!-- end ngRepeat: group in itemsByGroups | orderBy:['sort', '-id'] -->
+		</table>
+
+		<!-- ngIf: isEmail && editOrderLink --><div ng-if="isEmail &amp;&amp; editOrderLink" style="width:100%;min-width:100%;background-color:#006930;border-radius:7px;margin-top: 10mm; margin-bottom:10mm" class="ng-scope">
+			<a style="text-align: center;padding:1.5em 0.5em 0 0.5em;width:100%;text-decoration:none;color:white;" href="https://u6159356.ct.sendgrid.net/ls/click?upn=3MGwlXYfJayc354YPD5lYKeuCy7Ag6RlaPmKptdSWCbOnjbtcr8-2Bgq8YuYntC6LrKgATfKZasmuhH1TCxWQ8XS8s1HSKTitzXlR-2Fjei6OQbMfBXLHvcaPCfDcoQ-2F1W0lQmBZOwL7aoA-2F1bormNaixxfuRjUdp-2B8r2KEZAKtvflSUNr0ETyNMdZ-2FjnkE-2Fy-2BC8sRSl36jnNh4ivcVigloIZg-3D-3DgAQH_DhWX6cNkEyul3iUuXMm8aBHPn4Y1B6zLpvWykYvoUPtWO5JdxxEJD0B-2BNCeTtmA4rQFLNOMg-2BpF8L-2Bau7RUNmhm30BlNPYbOGmOanMCeKbITa9gWHIoNK-2FTCWQLXxGdjOwEs3fhReiFCMETROm1BcWlcc7gaj6sfEYCamZ7CRGUCcWRhkRuPG3ulV-2BJVd7PCh1IhZe4oFATEm0H8-2BPLG9CVI-2F8iGsKwxcWPY8Ire9eHiid4JUt4N8vIDErwpv4a-2F">
+				<span style="display: block; font-size: 6mm;" class="ng-binding">שכחת משהו?</span>
+				<span style="display: block; font-size: 4mm;" class="ng-binding">לחץ כאן כדי לעדכן את הזמנתך</span>
+			</a>
+		</div><!-- end ngIf: isEmail && editOrderLink -->
+		<!-- ngIf: $root.confirmationEmailDesign.thirdTextComponent && $root.confirmationEmailDesign.thirdTextComponent.text -->
+	</div>
+<a href='https://u6159356.ct.sendgrid.net/asm/unsubscribe/?user_id=6159356&amp;data=H1r6aW5pjdpZlaXTyt8QcFb4tJvAtjgGxxlPUVxAlyRoMDAwdTAwMNAU9o35sMjFPvMDFRyoexbYLoRbYBhrcWypfdTsh8eMe2McXkxbULYUbvG0-e2Bh0fkq2NONytewmaeO5WAJBMOvNI8PIXi6KMWTwwqtChpj8kVLDFpcDBtNanaiVFdkPS4xUbTgiEQwISjwU1mocWBDOzfKu9WUK3A7NjB-0kI9jd6ovjF78AQu3uE86NXsawPYWWtqj3n6q194IxIXRemjYfBvblK46Mbm5DwrOhIf8mhreeOACKnwPLWVLVXGY2qrp5C3d-MVmyOT3zoHrxF2NjY1-DZYCAqO3TE2ALOBbJtOxAKarrHzEoFMUnIJlVaXiPgtunJy1Qtb2H-Uhs='>Unsubscribe From This List</a> | <a href='https://u6159356.ct.sendgrid.net/asm/?user_id=6159356&amp;data=DGO-7FhebuLMQV6Jon31XV8UfxKjG6PoGrCtEqutQvhoMDAwdTAwMBiJW0FIz4QHAYaUuqVEp1Ur2AkDaxOl7ucq6sccVFPMGjMlL3Q5gX2t3E420SaOkjEpzrK_JhNguk236ld6-XMMnPJRw6mhK6yCzJL6wK1bwoJr1lmM1BKp1FzreTii51lD0lsFS0rRIkcF3unfRhQPHLuJmXF37hmEV3-tSy0KnqP0SFYXzbXMTulNJmJRQy93w3YOpx8kvW-viOimK57Dnw1I5j3kE4vmhFsz2Xq9wrZp130IyRLO86BViXdd1QQlqUm2Fg-Wau1VR9cZEYk-nRDYhIncOGzaZ2FP_hFIb10XpbXgZ_hsZpBtv3mDDQ=='>Manage Email Preferences</a><img src="https://u6159356.ct.sendgrid.net/wf/open?upn=YdE-2F4qT6SYcf2SuCtj8744UKUq7FcZNsOkWVhQ9rz4bWjwJWyMbbuSG73teoiSYRveO6rD1mWayNzGcJzKRItmjglqXgdY3s2LVZ4sKPjOR41fAqgmSoH-2BaAC17NxHB1Z3YX6yjp7ZXgnoe-2F-2Fuv55PsUGOsqDssaq1MyezTqPBfihuJ0eiUhjTkLJvJxScMAdpCXDNCJ0D8KF3FelI76ZNE0jDdOlqtqjoT-2BXoy-2F5X9VAieQBnKtTLtypppclTne" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"/></body></html>
+
