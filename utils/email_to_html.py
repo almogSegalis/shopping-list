@@ -66,6 +66,9 @@ for message in messages:
     body = get_message_body(service, msg)
     email_subject = next((header['value'] for header in headers if header['name'] == 'Subject'), None)
     if (CLASIFICATION_TIV_TAM in body) or (LOGO_TIV in body):
+        update = False
+        if "עדכון" in email_subject:
+            update = True
         pattern = r"\d{2}/\d{2}/\d{4}\s\d{2}:\d{2}"
         date_str = re.search(pattern, email_subject).group(0)
         pattern = r"#\d+"
@@ -73,7 +76,10 @@ for message in messages:
         prefix = "#"
         order_id = order_id.removeprefix(prefix)
         date_str = date_str.replace('/','-').replace(' ', '_time_').replace(':', '-')
-        file_name = f'tiv_tam_date_{date_str}_id_{order_id}.html'
+        if update:    
+            file_name = f'tiv_tam_update_date_{date_str}_id_{order_id}.html'
+        else:
+            file_name = f'tiv_tam_date_{date_str}_id_{order_id}.html'
     elif CLASIFICATION_JONGEL in email_subject:
         file_name = f'JONGEL.html'
     else:

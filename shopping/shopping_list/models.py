@@ -58,19 +58,30 @@ def get_items_name_tiv(file):
     return item_list
 
 
+def deleteUpdateFile(folder_path, update_file):
+    for filename in os.listdir(folder_path):
+        if os.path.isfile(os.path.join(folder_path, update_file)):
+            if update_file != '.DS_Store':
+                file_path2 = os.path.join(folder_path, filename)
+                if msg_id in filename and 'update' not in filename:
+                    os.remove(file_path2)
+
 # inisialize the orders with data from emails
 for filename in os.listdir(folder_path):
     if os.path.isfile(os.path.join(folder_path, filename)):
         if filename != '.DS_Store':
             file_path = os.path.join(folder_path, filename)
             if 'tiv_tam' in filename:
+                update = False
                 items = get_items_name_tiv(file_path)
                 s = filename
                 # Extract the date and time values using regular expressions
                 msg_id = re.search(r"_id_([0-9]+)", s).group(1)
                 date_str = re.search(r'_date_([0-9]{2}-[0-9]{2}-[0-9]{4})_', s).group(1)
                 time_str = re.search(r'_time_([0-9]{2}-[0-9]{2})', s).group(1)
-                
+                if ('update') in s:
+                    deleteUpdateFile(folder_path,filename)
+
                 # Convert the date and time strings to datetime objects
                 order_datetime = datetime.datetime.strptime(f'{date_str} {time_str}', '%d-%m-%Y %H-%M')
 
