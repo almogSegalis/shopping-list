@@ -12,6 +12,8 @@ class AddItem(forms.ModelForm):
 				'name': forms.TextInput(attrs = {
 				'class': 'form-control', 
 				'placeholder':"הוסיפי פריט", 
+				'list':'datalistOptions',
+				'id':'exampleDataList',
 				'style':'width:70%; text-align: right',
 				})
 		}

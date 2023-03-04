@@ -30,12 +30,17 @@
 	</center>
 	<br>
 
+	<!-- Items list -->
 	{% include 'shopping_list/table_of_items.html' %}
 
 	<!-- add item section -->
 	<div class="d-flex flex-row-reverse">
 		<ul>
 			<form class="d-inline-flex" action="{% url 'shopping_list:add_item' %}" method="post" >
+				<datalist id="datalistOptions">
+					<!-- Item suggestion with autocomplete options from the database -->
+				  <option class="item-from-data" value="">
+				</datalist>
 				<div class="d-inline-flex justify-content-between">
 					<button class="btn btn-outline-primary" type="submit">הוספה</button>
 				      {{ add }}
