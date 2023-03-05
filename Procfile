@@ -1,1 +1,1 @@
-web: sh -c 'cd ./shopping && exec python manage.py migrate && exec gunicorn shopping.wsgi'
+web: sh -c 'cd ./shopping  && exec gunicorn shopping.wsgi'
