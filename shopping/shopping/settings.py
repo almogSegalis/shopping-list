@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', "django-insecure-^-^=q#6)0#ay&j9=ue$q-+9oc@
 
 if IS_PRODUCTION:
     DEBUG = False
-    assert(SECRET_KEY.startswith('django-insecure'))
+    assert(not SECRET_KEY.startswith('django-insecure'))
 else:
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
