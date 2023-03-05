@@ -26,9 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-@a#_p99n!j&!%-@ug4a#fnhz4hxefsd)_)x)^@+r^rh%ri24&_"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if (socket.gethostname() == 'Almogs-MBP'):
+    DEBUG = True
+else:
+    DEBUG = False
 
-ALLOWED_HOSTS = ['shopping-list-demo.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'shopping-list-demo.herokuapp.com']
 
 
 # Application definition
