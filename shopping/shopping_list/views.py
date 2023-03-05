@@ -1,7 +1,14 @@
 from django.shortcuts import render, redirect
 from .models import Item, Tag
 from . import forms
+
+from django.http import JsonResponse
 from django.http import HttpResponseRedirect
+
+
+def get_items(request):
+    items = Item.objects.all().values()
+    return JsonResponse(list(items), safe=False)
 
 # Delete an item
 def delete_item(request, item_id):
@@ -32,9 +39,11 @@ def add_item(request):
     return render(request, 'shopping_list/list.html', { 'add': add })
 
 
+
+
 def main_shopping_list(request, tag_name=None):
 	active_tag = None
-	items = Item.objects.all().order_by('date')
+	items = Item.objects.all().order_by('updated_at')
 	tags = Tag.objects.all()
 	add = forms.AddItem()
 

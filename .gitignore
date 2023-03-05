@@ -135,3 +135,12 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+tiv_tam*
+JONGEL*
+*None.html*
+shopping/shopping_list/utils/emails/tiv_tam*
+*.DS_Store
+*token.json
+db.sqlite3.bkp
+credentials.json
