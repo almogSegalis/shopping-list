@@ -1,1 +1,1 @@
-web: gunicorn shopping.wsgi
+web: sh -c 'cd ./shopping && exec gunicorn shopping.wsgi'
