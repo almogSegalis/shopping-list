@@ -13,7 +13,7 @@ class AddItem(forms.ModelForm):
 				'class': 'form-control', 
 				'placeholder':"הוסיפי פריט", 
 				'list':'datalistOptions',
-				'id':'exampleDataList',
-				'style':'width:70%; text-align: right',
+				'id':'dataList',
+				'style':'width: 90%;',
 				})
 		}

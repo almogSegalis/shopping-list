@@ -7,6 +7,14 @@
 	<!-- tags filter section -->
 	<center>
 		<ul>
+			<a href="{% url 'shopping_list:list' %}"
+			 	{% if active_tag is None %}
+			    		class="btn btn-primary"
+			    {% else %}
+			    		class="btn btn-outline-primary"
+			    {% endif %}
+			  class ="btn btn-primary"
+			  >הצג הכל</a>
 			  {% for tag in tags %}
 			    	<a 
 			    	{% if active_tag == tag %}
@@ -18,14 +26,7 @@
 			    		{{ tag.name }}
 			    	</a>
 			  {% endfor %}
-			 <a href="{% url 'shopping_list:list' %}"
-			 	{% if active_tag is None %}
-			    		class="btn btn-primary"
-			    {% else %}
-			    		class="btn btn-outline-primary"
-			    {% endif %}
-			  class ="btn btn-primary"
-			  >הצג הכל</a>
+
 		</ul>
 	</center>
 	<br>
@@ -34,20 +35,20 @@
 	{% include 'shopping_list/table_of_items.html' %}
 
 	<!-- add item section -->
-	<div class="d-flex flex-row-reverse">
-		<ul>
+	<div class="d-flex">
 			<form class="d-inline-flex" action="{% url 'shopping_list:add_item' %}" method="post" >
 				<datalist id="datalistOptions">
 					<!-- Item suggestion with autocomplete options from the database -->
 				  <option class="item-from-data" value="">
 				</datalist>
-				<div class="d-inline-flex justify-content-between">
-					<button class="btn btn-outline-primary" type="submit">הוספה</button>
+				<div  class="form-group mb-2">
 				      {{ add }}
 				      {% csrf_token %}
 			    </div>
+			    <div>
+			    <button class="btn btn-outline-primary mb-2" type="submit">הוספה</button>
+			    </div>
 			</form>
 			<br>
-		</ul>
 	</div>
 {% endblock %}
