@@ -75,7 +75,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         # Load the user's credentials from a file
-        creds_file = r'credentials.json'
+        creds_file = r'../google-credentials.json'
         creds = None
         if os.path.exists('token.json'):
             with open('token.json', 'r') as token_file:
