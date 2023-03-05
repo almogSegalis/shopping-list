@@ -14,6 +14,10 @@ from pathlib import Path
 import dj_database_url
 import socket
 
+if (socket.gethostname() == 'Almogs-MBP'):
+    IS_PRODUCTION = False
+else:
+    IS_PRODUCTION = True
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,13 +27,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-@a#_p99n!j&!%-@ug4a#fnhz4hxefsd)_)x)^@+r^rh%ri24&_"
+SECRET_KEY = os.getenv('SECRET_KEY', "django-insecure-^-^=q#6)0#ay&j9=ue$q-+9oc@+o&0us$!@61+rgez@_0=2=r1")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-if (socket.gethostname() == 'Almogs-MBP'):
-    DEBUG = True
-else:
+if IS_PRODUCTION:
     DEBUG = False
+    assert(SECRET_KEY.startswith('django-insecure'))
+else:
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'shopping-list-demo.herokuapp.com']
 
@@ -79,19 +84,20 @@ WSGI_APPLICATION = "shopping.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-if (socket.gethostname() == 'Almogs-MBP'):
+if IS_PRODUCTION:
+    DATABASES = {
+        "default": {}
+    }
+    db_from_env = dj_database_url.config(conn_max_age=600)
+    DATABASES['default'].update(db_from_env)
+else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-else:
-    DATABASES = {
-        "default": {}
-    }
-    db_from_env = dj_database_url.config(conn_max_age=600)
-    DATABASES['default'].update(db_from_env)
+    
 
 
 # Password validation
