@@ -143,3 +143,4 @@ shopping/shopping_list/utils/emails/tiv_tam*
 *.DS_Store
 *token.json
 db.sqlite3.bkp
+credentials.json
