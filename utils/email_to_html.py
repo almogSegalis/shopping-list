@@ -20,7 +20,7 @@ RLEVANT_EMAIL_INDEX = 2
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 # Load the user's credentials from a file
-creds_file = r'/Users/almog/Documents/PycharmProjects/django_project/untitled folder/credentials.json'
+creds_file = r'credentials.json'
 creds = None
 if os.path.exists('token.json'):
     with open('token.json', 'r') as token_file:
@@ -84,7 +84,7 @@ for message in messages:
         file_name = f'JONGEL.html'
     else:
         file_name = f'None.html'
-    folder_path = "shopping/shopping_list/utils/emails"
+    folder_path = "emails/"
     file_path = os.path.join(folder_path, file_name)
     with open(file_path, 'w') as file:
         file.write(f"Message ID: {message['id']}\n")

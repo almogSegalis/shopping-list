@@ -46,7 +46,9 @@ def get_values_table_tiv(file):
     # Get the valus from the email table
     dfs = pd.read_html(file, encoding="utf-8")
     df = dfs[SHOPPING_TABLE_INDEX]
-    df = df[df['Unnamed: 5'].isna()] # remove irrelevent rows.
+    # take last column, it must be artficial column created by html table formating
+    artficial_column_name = df.columns[-1]
+    df = df[df[artficial_column_name].isna()] # remove irrelevent rows.
     df = df[df.columns[1:5]] # remove irrelevent columns.
     df.index = pd.Index(range(len(df))) # rebuild index 
     return df
