@@ -88,7 +88,12 @@ class Command(BaseCommand):
             folder_path = "shopping_list/utils/emails/"
 
         creds = None
-        if os.path.exists('token.json'):
+        creds_json_data = os.getenv('CREDS_JSON_DATA', None)
+        if not (creds_json_data is None):
+            creds = Credentials.from_authorized_user_info(
+                    info=json.loads(creds_data), scopes=SCOPES)
+            
+        elif os.path.exists('token.json'):
             with open('token.json', 'r') as token_file:
                 creds_data = token_file.read()
                 creds = Credentials.from_authorized_user_info(
