@@ -75,7 +75,18 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         # Load the user's credentials from a file
-        creds_file = r'../google-credentials.json'
+        
+        if (os.path.exists( r'../google-credentials.json')):
+            creds_file = r'../google-credentials.json'
+        else:
+            creds_file = r'google-credentials.json'
+            
+
+        if (os.path.exists("shopping/shopping_list/utils/emails/")):
+            folder_path = "shopping/shopping_list/utils/emails/"
+        else:
+            folder_path = "shopping_list/utils/emails/"
+
         creds = None
         if os.path.exists('token.json'):
             with open('token.json', 'r') as token_file:
@@ -122,7 +133,7 @@ class Command(BaseCommand):
                 file_name = f'JONGEL.html'
             else:
                 file_name = f'None.html'
-            folder_path = "shopping_list/utils/emails/"
+            
             file_path = os.path.join(folder_path, file_name)
             with open(file_path, 'w') as file:
                 file.write(f"Message ID: {message['id']}\n")
