@@ -20,16 +20,17 @@ class ItemManager(models.Manager):
 class Item(models.Model):
     name = models.CharField(max_length=100)
     tags = models.ManyToManyField(Tag, blank=True)
-    date = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.name
+        return f'Item {self.name}'
 
 class Order(models.Model):
     venue_name = models.ForeignKey(Tag, blank=True, null=True, on_delete=models.CASCADE)
     order_time = models.DateTimeField()
-    order_num =  models.IntegerField(max_length=100, default='')
+    order_num =  models.IntegerField(default='')
 
     # Field for items in the order
     items = models.ManyToManyField(Item)
