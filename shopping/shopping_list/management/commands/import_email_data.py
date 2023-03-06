@@ -76,27 +76,18 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         # Load the user's credentials from a file
         
-        if (os.path.exists( r'../google-credentials.json')):
-            creds_file = r'../google-credentials.json'
-        else:
-            creds_file = r'google-credentials.json'
-            
-
-        if (os.path.exists("shopping/shopping_list/utils/emails/")):
-            folder_path = "shopping/shopping_list/utils/emails/"
-        else:
-            folder_path = "shopping_list/utils/emails/"
+        creds_file = r'../google-credentials.json'
+        folder_path = "shopping_list/utils/emails/"
 
         creds = None
         creds_json_data = os.getenv('CREDS_JSON_DATA', None)
+        if (creds_json_data is None) and os.path.exists('token.json'):
+             with open('token.json', 'r') as token_file:
+                creds_json_data = token_file.read()
+
         if not (creds_json_data is None):
             creds = Credentials.from_authorized_user_info(
                     info=json.loads(creds_json_data), scopes=SCOPES)
-        elif os.path.exists('token.json'):
-            with open('token.json', 'r') as token_file:
-                creds_data = token_file.read()
-                creds = Credentials.from_authorized_user_info(
-                    info=json.loads(creds_data), scopes=SCOPES)
 
         if not creds:
             flow = InstalledAppFlow.from_client_secrets_file(creds_file, SCOPES)
