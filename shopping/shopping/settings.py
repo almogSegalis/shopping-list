@@ -37,7 +37,7 @@ else:
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'shopping-list-demo.herokuapp.com']
+ALLOWED_HOSTS = ['192.168.1.111', '127.0.0.1', 'shopping-list-demo.herokuapp.com']
 
 
 # Application definition
@@ -60,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = "shopping.urls"
