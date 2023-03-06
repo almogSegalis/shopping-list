@@ -80,14 +80,14 @@ class Command(BaseCommand):
         folder_path = "shopping_list/utils/emails/"
 
         creds = None
-        creds_json_data = os.getenv('CREDS_JSON_DATA', None)
-        if (creds_json_data is None) and os.path.exists('token.json'):
+        token_json_data = os.getenv('token_JSON_DATA', None)
+        if (token_json_data is None) and os.path.exists('token.json'):
              with open('token.json', 'r') as token_file:
-                creds_json_data = token_file.read()
+                token_json_data = token_file.read()
 
-        if not (creds_json_data is None):
+        if (token_json_data != None):
             creds = Credentials.from_authorized_user_info(
-                    info=json.loads(creds_json_data), scopes=SCOPES)
+                    info=json.loads(token_json_data), scopes=SCOPES)
 
         if not creds:
             flow = InstalledAppFlow.from_client_secrets_file(creds_file, SCOPES)
