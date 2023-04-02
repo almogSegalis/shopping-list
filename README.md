@@ -10,6 +10,8 @@ Django 3.1 or higher
 2. Install the dependencies: pip install -r requirements.txt
 3. Run the server: python manage.py runserver
 
+Note: The Shopping List web application is also deployed on Heroku at [https://shopping-list-demo.herokuapp.com/shopping_list/](https://shopping-list-demo.herokuapp.com/shopping_list/)
+
 ## Adding items
 To add an item to the shopping list, click on the "Add Item" button and enter the item name in the text field. You can also assign one or more tags to the item by selecting them from the dropdown list.
 
