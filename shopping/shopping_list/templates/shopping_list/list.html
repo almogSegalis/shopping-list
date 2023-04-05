@@ -6,41 +6,42 @@
 
 	<!-- tags filter section -->
 	<center>
-		<ul>
+		<section id ="filter-tags">
+			<ul class="tag-list">
+				<button></button>
+			</ul>
+		</section>
+			<ul>
+				<a href="{% url 'shopping_list:list' %}"
+					{% if active_tag is None %}
+							class="btn btn-primary"
+					{% else %}
+							class="btn btn-outline-primary"
+					{% endif %}
+				class ="btn btn-primary"
+				>הצג הכל</a>
+				{% for tag in tags %}
+						<a 
+						{% if active_tag == tag %}
+							class="btn btn-{{ tag.color }}"
+						{% else %}
+							class="btn btn-outline-{{ tag.color }}"
+						{% endif %}
+						href="{% url 'shopping_list:item_list_by_tag' tag.name %}">
+							{{ tag.name }}
+						</a>
+				{% endfor %}
 
-			<a href="{% url 'shopping_list:list' %}"
-			 	{% if active_tag is None %}
-			    		class="btn btn-primary"
-			    {% else %}
-			    		class="btn btn-outline-primary"
-			    {% endif %}
-			  class ="btn btn-primary"
-			  >הצג הכל</a>
-			  {% for tag in tags %}
-			    	<a 
-			    	{% if active_tag == tag %}
-			    		class="btn btn-{{ tag.color }}"
-			    	{% else %}
-			    		class="btn btn-outline-{{ tag.color }}"
-			    	{% endif %}
-			    	href="{% url 'shopping_list:item_list_by_tag' tag.name %}">
-			    		{{ tag.name }}
-			    	</a>
-			  {% endfor %}
-
-		</ul>
+			</ul>
 	</center>
 	<br>
 
 
 	<!-- Items list -->
 	{% include 'shopping_list/table_of_items.html' %}
-
-	<!-- add item section -->
 	<div class="d-flex">
 			<form class="d-inline-flex" action="{% url 'shopping_list:add_item' %}" method="post" >
 				<datalist id="datalistOptions">
-					<!-- Item suggestion with autocomplete options from the database -->
 				  <option class="item-from-data" value="">
 				</datalist>
 				<div  class="form-group mb-2">
