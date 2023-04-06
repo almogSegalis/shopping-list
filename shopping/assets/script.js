@@ -1,36 +1,17 @@
 
+
 const tableBody = document.querySelector('table tbody');
-const form = document.querySelector('#new-item form')
-
-function sendHttpRequest(method, url, data = null) {
-  const promise = new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open(method, url);
-    xhr.onload = function () {
-      if (xhr.status >= 200 && xhr.status < 300) {
-        resolve(xhr.response);
-      } else {
-        reject(new Error('Somthing went wrong!'));
-      }
-    };
-
-    xhr.onerror = function () {
-      reject(new console.error('Failed to send request'));
-    };
-
-    xhr.send(JSON.stringify(data));
 
 
-  });
-  return promise;
-}
-async function fetchPost() {
+const form = document.querySelector('form');
+
+
+async function fetchItem() {
   try {
-    const responseData = await sendHttpRequest(
-      'GET',
+    const response = await axios.get(
       '/shopping_list/get-items/'
     );
-    const listOfItems = JSON.parse(responseData);
+    const listOfItems = response.data;
 
     tableBody.innerHTML = `<template id="single-line">
     <tr>
@@ -52,7 +33,6 @@ async function fetchPost() {
 
     // add the items from the databse for autocomplete
     const datalist = document.querySelector('#datalistOptions');
-    const option = datalist.querySelector('.item-from-data');
 
     for (const item of listOfItems) {
       const itemRow = document.importNode(itemTemplate.content, true);
@@ -70,21 +50,20 @@ async function fetchPost() {
       }
     }
   } catch (error) {
-    alert(error.message);
+    console.log(error.message);
+    console.log(error.response);
   }
 }
 
-fetchPost();
+fetchItem();
 
 tableBody.addEventListener('click', async (event) => {
   if (
     event.target.tagName === 'BUTTON' ||
     event.target.parentElement.tagName === 'BUTTON'
   ) {
-    console.log('Click on button!');
     const itemId = event.target.closest('tr').id;
-    console.log(itemId);
-    const responseData = await sendHttpRequest('GET', `/shopping_list/delete_item/${itemId}`);
-    fetchPost();
+    const responseData = await axios.get(`/shopping_list/delete_item/${itemId}`);
+    fetchItem();
   }
 });

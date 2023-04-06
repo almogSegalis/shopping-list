@@ -39,6 +39,8 @@
 
 	<!-- Items list -->
 	{% include 'shopping_list/table_of_items.html' %}
+
+	<!-- Add item form -->
 	<div class="d-flex">
 			<form class="d-inline-flex" action="{% url 'shopping_list:add_item' %}" method="post" >
 				<datalist id="datalistOptions">

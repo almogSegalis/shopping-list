@@ -5,7 +5,6 @@ from django.http import JsonResponse
 from django.http import HttpResponseRedirect
 
 
-
 def get_items(request):
     items = Item.objects.all().items = Item.objects.all().values('id', 'name', 'created_at', 'updated_at', 'is_active', 'tags__id', 'tags__name', 'tags__color')
     return JsonResponse(list(items), safe=False)
@@ -16,28 +15,6 @@ def delete_item(request, item_id):
 	item.is_active = False
 	item.save()
 	return JsonResponse(True, safe=False) #return true if delete succeeded
-
-
-# def add_item(request):
-#     if request.method == 'POST':
-#         add = forms.AddItem(request.POST)
-#         # save item to db
-#         if add.is_valid():
-#             item_name = request.POST['name']
-#             item, created = Item.objects.get_or_create(name=item_name)
-#             if created or not item.is_active:
-#                 item.is_active = True
-#                 item.save()
-#             else:
-#                 # Item already exists and is active
-#                 pass
-            
-#             return redirect('shopping_list:list')
-#     else:
-#         add = forms.AddItem()
-    
-#     return render(request, 'shopping_list/list.html', { 'add': add })
-
 
 
 def add_item(request):
