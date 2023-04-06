@@ -1,8 +1,6 @@
 
 
 const tableBody = document.querySelector('table tbody');
-
-
 const form = document.querySelector('form');
 
 
@@ -12,7 +10,6 @@ async function fetchItem() {
       '/shopping_list/get-items/'
     );
     const listOfItems = response.data;
-
     tableBody.innerHTML = `<template id="single-line">
     <tr>
       <td class="align-baseline"></td>
@@ -33,10 +30,14 @@ async function fetchItem() {
 
     // add the items from the databse for autocomplete
     const datalist = document.querySelector('#datalistOptions');
+    for (const item of listOfItems) {
+      const option = document.createElement('option');
+      option.value = item.name;
+      datalist.appendChild(option);
+    }
 
     for (const item of listOfItems) {
       const itemRow = document.importNode(itemTemplate.content, true);
-
       if (item.is_active) {
         itemRow.querySelector('td').textContent = item.name;
         itemRow.querySelector('tr').id = item.id;
@@ -57,6 +58,7 @@ async function fetchItem() {
 
 fetchItem();
 
+// delete item
 tableBody.addEventListener('click', async (event) => {
   if (
     event.target.tagName === 'BUTTON' ||
