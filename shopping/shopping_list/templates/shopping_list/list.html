@@ -8,31 +8,9 @@
 	<center>
 		<section id ="filter-tags">
 			<ul class="tag-list">
-				<button></button>
 			</ul>
 		</section>
-			<ul>
-				<a href="{% url 'shopping_list:list' %}"
-					{% if active_tag is None %}
-							class="btn btn-primary"
-					{% else %}
-							class="btn btn-outline-primary"
-					{% endif %}
-				class ="btn btn-primary"
-				>הצג הכל</a>
-				{% for tag in tags %}
-						<a 
-						{% if active_tag == tag %}
-							class="btn btn-{{ tag.color }}"
-						{% else %}
-							class="btn btn-outline-{{ tag.color }}"
-						{% endif %}
-						href="{% url 'shopping_list:item_list_by_tag' tag.name %}">
-							{{ tag.name }}
-						</a>
-				{% endfor %}
-
-			</ul>
+		
 	</center>
 	<br>
 

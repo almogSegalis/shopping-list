@@ -1,8 +1,6 @@
-
-
 const tableBody = document.querySelector('table tbody');
 const form = document.querySelector('form');
-
+const SHOW_ALL = 'הצג הכל';
 
 async function fetchItem() {
   try {
@@ -26,7 +24,6 @@ async function fetchItem() {
   </template>`;
 
     const itemTemplate = document.getElementById('single-line');
-    console.log(listOfItems);
 
     // add the items from the databse for autocomplete
     const datalist = document.querySelector('#datalistOptions');
@@ -36,6 +33,10 @@ async function fetchItem() {
       datalist.appendChild(option);
     }
 
+    //add the items tags from database for flitering
+    createTagFilteringSction(listOfItems);
+    
+    // add the items from the database to the table
     for (const item of listOfItems) {
       const itemRow = document.importNode(itemTemplate.content, true);
       if (item.is_active) {
@@ -69,3 +70,57 @@ tableBody.addEventListener('click', async (event) => {
     fetchItem();
   }
 });
+
+
+function createTagFilteringSction(listOfItems) {
+  const tags = [];
+  const tagsColors = [];
+  buttonAll = {
+    tags__name: SHOW_ALL,
+    color: '#0d6efd'
+  };
+  tags.push(buttonAll.tags__name);
+  tagsColors.push(buttonAll.color);
+  for (const item of listOfItems) {
+    if (!tags.includes(item.tags__name) && item.tags__name !== null) {
+      tags.push(item.tags__name);
+      tagsColors.push(item.tags__color);
+    }
+  }
+  console.log(tags);
+  console.log(tagsColors);
+
+  const tagsContainer = document.querySelector('#filter-tags');
+  const tagbuttons = Array.from(document.querySelectorAll('.button-tag'));
+  
+  for (let i = 0; i < tags.length; i++) {
+        // check if the button already exist
+        if (tagbuttons.length === 0 || tagbuttons.textContent!==tags[i].textContent ){
+          const tagButton = document.createElement('button');
+          tagButton.textContent = tags[i];
+          tagButton.classList.add('button-tag');
+          tagButton.style.borderColor = tagsColors[i];
+          tagButton.style.color = tagsColors[i];
+          tagsContainer.appendChild(tagButton);
+      }
+  }
+
+ 
+  // add event listener to the filter buttons
+    tags.forEach((filterTag, index) => {
+      const tagButton = document.querySelector(`.button-tag:nth-child(${index + 2})`);
+      tagButton.addEventListener('click', () => {
+        tagButton.classList.toggle('active');
+        const rowsTag = document.querySelectorAll('.tag');
+        rowsTag.forEach((rowTag) => {
+          if (rowTag.textContent === filterTag || filterTag === SHOW_ALL) {
+            rowTag.parentElement.parentElement.style.display = 'table-row';
+          } else {
+            rowTag.parentElement.parentElement.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+  
+
