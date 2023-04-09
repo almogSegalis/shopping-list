@@ -23,15 +23,8 @@
 	margin: 5px;
   }
 
-.button-tag:hover {
-	background-color: #ddd;
-	color: #0d6efd;
-  }
-
-.button-tag:active {
-	background-color: #0d6efd;
-	color: #0d6efd;
-  }
-
-
-
+ #numbers {
+	width: 3em;
+}
+  
+  

@@ -3,10 +3,11 @@ from .models import Item, Tag
 from . import forms
 from django.http import JsonResponse
 from django.http import HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
 
 
 def get_items(request):
-    items = Item.objects.all().items = Item.objects.all().values('id', 'name', 'created_at', 'updated_at', 'is_active', 'tags__id', 'tags__name', 'tags__color')
+    items = Item.objects.all().items = Item.objects.all().values('id', 'name', 'quantity', 'created_at', 'updated_at', 'is_active', 'tags__id', 'tags__name', 'tags__color')
     return JsonResponse(list(items), safe=False)
 
 # Delete an item

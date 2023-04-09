@@ -16,7 +16,7 @@ class ItemManager(models.Manager):
 class Item(models.Model):
     name = models.CharField(max_length=100)
     tags = models.ManyToManyField(Tag, blank=True)
-
+    quantity = models.IntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
