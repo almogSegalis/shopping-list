@@ -4,27 +4,8 @@ const SHOW_ALL = 'הצג הכל';
 
 async function fetchItem() {
   try {
-
     const response = await axios.get('/shopping_list/get-items/');
     const listOfItems = response.data;
-    tableBody.innerHTML = `<template id="single-line">
-    <tr>
-      <td class="align-baseline"></td>
-      <th scope="row" class="align-baseline">
-        <input id="numbers" pattern="[0-9.]+" type="number" value="1">
-      </th>
-      <td class="align-baseline" id="tags"></td>
-      <td class="align-baseline">
-        <button type="button" class="btn btn-outline-danger btn-sm">
-        <svg id="i-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="15" height="25" fill="none" stroke="red" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
-          <path d="M2 30 L30 2 M30 30 L2 2" />
-        </svg>
-        </button>
-      </td>
-    </tr>
-  </template>`;
-
-    const itemTemplate = document.getElementById('single-line');
 
     // add the items from the databse for autocomplete
     const datalist = document.querySelector('#datalistOptions');
@@ -38,6 +19,7 @@ async function fetchItem() {
     createTagFilteringSction(listOfItems);
 
     // add the items from the database to the table
+    const itemTemplate = document.getElementById('single-line');
     for (const item of listOfItems) {
       const itemRow = document.importNode(itemTemplate.content, true);
       if (item.is_active) {
@@ -70,6 +52,7 @@ async function fetchItem() {
 
 fetchItem();
 
+
 // delete item
 tableBody.addEventListener('click', async (event) => {
   if (
@@ -80,7 +63,8 @@ tableBody.addEventListener('click', async (event) => {
     const responseData = await axios.get(
       `/shopping_list/delete_item/${itemId}`
     );
-    fetchItem();
+    const deletedRow = document.getElementById(itemId);
+    deletedRow.remove(); // remove the deleted row from the table
   }
 });
 
