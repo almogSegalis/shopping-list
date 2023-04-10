@@ -5,6 +5,15 @@ from django.http import JsonResponse
 from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+def update_quantity(request, item_id, quantity):
+    item = Item.objects.get(pk=item_id)
+    item.quantity = quantity
+    item.save()
+    return JsonResponse(True, safe=False)
 
 def get_items(request):
     items = Item.objects.all().items = Item.objects.all().values('id', 'name', 'quantity', 'created_at', 'updated_at', 'is_active', 'tags__id', 'tags__name', 'tags__color')

@@ -25,15 +25,7 @@ async function fetchItem() {
       if (item.is_active) {
         itemRow.querySelector('td').textContent = item.name;
         itemRow.querySelector('tr').id = item.id;
-        if (localStorage.getItem(item.name)) {
-          // if the item is in the local storage, use the quantity from the local storage
-          itemRow.querySelector('#numbers').value = localStorage.getItem(
-            item.name
-          );
-        } else { 
-          // if the item is not in the local storage, use the quantity from the database
-          itemRow.querySelector('#numbers').value = item.quantity; 
-        }
+        itemRow.querySelector('#numbers').value = item.quantity; 
         const tagsCell = itemRow.querySelector('#tags');
         const tagElement = document.createElement('span');
         tagElement.textContent = item.tags__name;
@@ -68,15 +60,50 @@ tableBody.addEventListener('click', async (event) => {
   }
 });
 
-// change the quantity of the item
+
+
+function getCsrftokenFormCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === (name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
+
+const csrftoken = getCsrftokenFormCookie('csrftoken');
+
+// change quantity
 tableBody.addEventListener('change', async (event) => {
   if (event.target.tagName === 'INPUT') {
     const itemId = event.target.closest('tr').id;
     const quantity = event.target.value;
     const itemName = event.target.closest('tr').firstElementChild.textContent;
-    localStorage.setItem(itemName, quantity);
-  };
+    await axios.post(`/shopping_list/update_quantity/${itemId}/${quantity}`,
+    {}, {
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': csrftoken,
+      },
+    })
+    .then(response => {
+      // console.log(response);
+      // Handle the response, e.g. display a success message
+      
+    })
+    .catch(error => {
+      console.error(error);
+      // Handle the error, e.g. display an error message
+    });
+  }
 });
+
 
 function createTagFilteringSction(listOfItems) {
   const tags = [];

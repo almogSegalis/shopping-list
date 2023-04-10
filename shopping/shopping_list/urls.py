@@ -11,4 +11,5 @@ urlpatterns = [
     path('item_list/<tag_name>', views.main_shopping_list ,name="item_list_by_tag"),
     path('get-items/', views.get_items, name='get_items'),
     path('filter_items/<tag_name>/', views.filter_items, name='filter_items'),
+    path('update_quantity/<item_id>/<quantity>', views.update_quantity, name='update_quantity'),
 ]
