@@ -18,20 +18,18 @@
 	<!-- Items list -->
 	{% include 'shopping_list/table_of_items.html' %}
 
-	<!-- Add item form -->
-	<div class="d-flex">
-			<form class="d-inline-flex" action="{% url 'shopping_list:add_item' %}" method="post" >
-				<datalist id="datalistOptions">
-				  <option class="item-from-data" value="">
-				</datalist>
-				<div  class="form-group mb-2">
-				      {{ add }}
-				      {% csrf_token %}
-			    </div>
-			    <div>
-			    <button class="btn btn-outline-primary mb-2" type="submit">הוספה</button>
-			    </div>
-			</form>
-			<br>
+
+    <!-- Add item form -->
+    <div class="d-flex">
+		<form id="post-item" class="d-inline-flex">
+			{% csrf_token %}
+			<input type="text" name="item_name" id="item_name" list="datalistOptions" placeholder="הכנס שם פריט" class="form-control mb-2">
+			<datalist id="datalistOptions">
+			  <option class="item-from-data" value="">
+			</datalist>
+			<button id="add-button" class="btn btn-outline-primary mb-2" type="submit">הוספה</button>
+		</form>
+		<br>
 	</div>
+
 {% endblock %}

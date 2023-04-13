@@ -25,6 +25,7 @@ async function fetchItem() {
       if (item.is_active) {
         itemRow.querySelector('td').textContent = item.name;
         itemRow.querySelector('tr').id = item.id;
+        itemRow.querySelector('tr').classList = "item-row";
         itemRow.querySelector('#numbers').value = item.quantity; 
         const tagsCell = itemRow.querySelector('#tags');
         const tagElement = document.createElement('span');
@@ -35,6 +36,7 @@ async function fetchItem() {
         tableBody.appendChild(itemRow);
       }
     }
+              
 
   } catch (error) {
     console.log(error.message);
@@ -60,8 +62,6 @@ tableBody.addEventListener('click', async (event) => {
   }
 });
 
-
-
 function getCsrftokenFormCookie(name) {
   var cookieValue = null;
   if (document.cookie && document.cookie !== '') {
@@ -84,7 +84,6 @@ tableBody.addEventListener('change', async (event) => {
   if (event.target.tagName === 'INPUT') {
     const itemId = event.target.closest('tr').id;
     const quantity = event.target.value;
-    const itemName = event.target.closest('tr').firstElementChild.textContent;
     await axios.post(`/shopping_list/update_quantity/${itemId}/${quantity}`,
     {}, {
       headers: {
@@ -93,7 +92,6 @@ tableBody.addEventListener('change', async (event) => {
       },
     })
     .then(response => {
-      // console.log(response);
       // Handle the response, e.g. display a success message
       
     })
@@ -104,6 +102,43 @@ tableBody.addEventListener('change', async (event) => {
   }
 });
 
+// add item
+addButton = document.querySelector('#add-button');
+addButton.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const itemName = document.querySelector('#item_name').value;
+    await axios.post(`/shopping_list/add_item/${itemName}`,
+    {}, {
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': csrftoken,
+      },
+    })
+    .then(async (response) => {
+      const items = document.querySelectorAll('tr');
+
+      clearTableItems(items);
+
+      // add the items from the database to the table
+      await fetchItem();
+
+      // clear the input field
+      document.querySelector('#item_name').value = '';
+    
+    }).catch(error => {
+      console.error(error);
+      // Handle the error, e.g. display an error message
+    });
+  });
+
+// clear the table
+function clearTableItems(items) {
+  items.forEach(item => {
+    if (item.classList.contains('item-row')) {
+      item.remove();
+    }
+  });
+}
 
 function createTagFilteringSction(listOfItems) {
   const tags = [];
