@@ -49,16 +49,15 @@ fetchItem();
 
 // delete item
 tableBody.addEventListener('click', async (event) => {
-  if (
-    event.target.tagName === 'BUTTON' ||
-    event.target.parentElement.tagName === 'BUTTON'
-  ) {
-    const itemId = event.target.closest('tr').id;
-    const responseData = await axios.get(
-      `/shopping_list/delete_item/${itemId}`
-    );
-    const deletedRow = document.getElementById(itemId);
-    deletedRow.remove(); // remove the deleted row from the table
+  if (event.target.tagName === 'BUTTON' || event.target.parentElement.tagName === 'BUTTON') {
+    if (event.target.id === 'delete-button' || event.target.parentElement.id === 'delete-button') {
+      const itemId = event.target.closest('tr').id;
+      const deletedRow = document.getElementById(itemId);
+      deletedRow.remove(); // remove the deleted row from the table
+      const responseData = await axios.get(
+        `/shopping_list/delete_item/${itemId}`
+      );
+    }
   }
 });
 
