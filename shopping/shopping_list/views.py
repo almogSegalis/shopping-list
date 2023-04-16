@@ -5,6 +5,24 @@ from django.http import JsonResponse
 from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 
+
+def update_item(request, item_id):
+    item = Item.objects.get(pk=item_id)
+    tags = item.tags.all()
+    data = [
+        {
+            'id': item.id,
+            'name': item.name,
+            'quantity': item.quantity,
+            'tags': [
+                {'id': tag.id, 'name': tag.name, 'color': tag.color}
+                for tag in tags
+            ]
+        }
+    ]
+    context = {'data': data}
+    return render(request, 'shopping_list/update_item.html', context)    
+
 # Get all items
 def get_items(request):
     items = Item.objects.all().items = Item.objects.all().values('id', 'name', 'quantity', 'created_at', 'updated_at', 'is_active', 'tags__id', 'tags__name', 'tags__color')

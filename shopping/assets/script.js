@@ -46,19 +46,33 @@ async function fetchItem() {
 
 fetchItem();
 
-
 // delete item
 tableBody.addEventListener('click', async (event) => {
-  if (
-    event.target.tagName === 'BUTTON' ||
-    event.target.parentElement.tagName === 'BUTTON'
-  ) {
-    const itemId = event.target.closest('tr').id;
-    const responseData = await axios.get(
-      `/shopping_list/delete_item/${itemId}`
-    );
-    const deletedRow = document.getElementById(itemId);
-    deletedRow.remove(); // remove the deleted row from the table
+  if (event.target.tagName === 'BUTTON' || event.target.parentElement.tagName === 'BUTTON') {
+    if (event.target.id === 'delete-button' || event.target.parentElement.id === 'delete-button') {
+      const itemId = event.target.closest('tr').id;
+      const deletedRow = document.getElementById(itemId);
+      deletedRow.remove(); // remove the deleted row from the table
+      const responseData = await axios.get(
+        `/shopping_list/delete_item/${itemId}`
+      );
+    }
+  }
+});
+
+// edit item
+tableBody.addEventListener('click', async (event) => {
+  const editTemplate = document.getElementById('edit-form');
+  if (event.target.tagName === 'BUTTON' || event.target.parentElement.tagName === 'BUTTON') {
+    if (event.target.id === 'edit-button' || event.target.parentElement.id === 'edit-button') {
+      const itemId = event.target.closest('tr').id;
+      // const responseData = await axios.get(
+      //   `/shopping_list/update_item/${itemId}`
+      // );
+
+      //  Redirect to new HTML page
+       location.href = `/shopping_list/update_item/${itemId}`;
+    }
   }
 });
 
